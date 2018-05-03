@@ -1,3 +1,8 @@
+#TIPS
+1. className = "stuff" => class="stuff";
+2. forHTML = "stuff" => for="stuff";
+
+
 #README
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Users from './users/Users';
 import './App.css';
+
+
+// JSX funtime
 
 class App extends Component {
   render() {
+    // You can only render one ROOT tag
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Users title="USERS LIST"/>
       </div>
     );
   }

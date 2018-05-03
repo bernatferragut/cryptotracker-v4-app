@@ -1,19 +1,28 @@
 import React, { Component } from 'react';
-import Users from './users/Users';
 import './App.css';
 
-
-// JSX funtime
-
 class App extends Component {
+  // 1. Constructor Method + State
+  constructor(){
+    super();
+    this.state = {
+      name: "BERNAT",
+      count:0
+      }
+  }
+  // 2. Extra Methods
+  addOne = () => {
+    this.setState({ count: this.state.count+1 });
+  }
+  // 3. Render Method
   render() {
-    // You can only render one ROOT tag
     return (
-      <div>
-        <Users title="USERS LIST"/>
+      <div className="App">
+        <h1>GOOD MORNING {this.state.name}</h1>
+        <button onClick={this.addOne}> ADD ONE </button>
+        <div>{this.state.count}</div>
       </div>
     );
   }
 }
-
 export default App;

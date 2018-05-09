@@ -1,5 +1,8 @@
-.flat{
-    /* code */
+/* FLAT CSS */
+
+.flat {
+    flex-basis: calc(50% - 20px);
+    margin: 10px;
 }
 
 .flat-picture{

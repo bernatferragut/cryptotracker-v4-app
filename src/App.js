@@ -8,7 +8,9 @@ class App extends Component {
   // 1. State
   state = {
     flats : [],
-    selectedFlat:null
+    allFlats: [],
+    selectedFlat:null,
+    search: ""
   }
 
   // 2. Fetching
@@ -19,7 +21,8 @@ class App extends Component {
     .then(data => {
       // console.log(data);
       this.setState({
-        flats: data
+        flats: data,
+        allFlats: data
       })
     })
   }
@@ -30,6 +33,14 @@ class App extends Component {
     this.setState({
       selectedFlat : flat
     });
+  }
+
+  handleSearch = (e) => {
+    // console.log(e);
+    this.setState({
+      search: e.target.value,
+      flats: this.state.allFlats.filter(flat => new RegExp(e.target.value, "i").exec(flat.name))
+    })
   }
 
   // 3. Render Method
@@ -51,7 +62,14 @@ class App extends Component {
     return (
       <div className="app">
         <div className="main">
-          <div className="search"></div>
+          <div className="search">
+            <input
+              type="text"
+              placeholder="Search..."
+              value={this.state.input}
+              onChange={this.handleSearch}
+            />
+          </div>
           <div className="flats">
             {this.state.flats.map( (flat) => <Flat 
               key={flat.name} 

@@ -1,0 +1,15 @@
+.card {
+    padding: 20px;
+    margin: 0;
+    max-width: 50%;
+    background-color: antiquewhite;
+    border-radius: 8px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    color: lightpink;
+}
+
+.symbol {
+    font-size: 36px;
+    color: lightgrey
+}

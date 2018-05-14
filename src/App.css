@@ -1,13 +1,20 @@
 /* APP CSS */
 
 .app {
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
-  color: lightskyblue;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 100vh;
 }
 
-input {
-  max-width: 300px;
-  height: 25px;
+.header {
+  background-color: lightblue;
+}
+
+.body {
+  background-color: lightgoldenrodyellow;
+}
+
+.footer {
+  background-color: lightpink;
 }

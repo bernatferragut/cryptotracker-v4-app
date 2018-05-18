@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import CryptoBox from './components/cryptoBox'
+import Tickers from './components/tickers'
 
 class App extends Component {
   // constructor
   // setState
   // render
   render()   {
-    console.log('rendering...')
     return (
       //APP
       <div className="app">
-        <div className="header"></div>
-          <CryptoBox/>
+        <div className="header">
+          <Tickers/>          
+        </div>
         <div className="body"></div>
         <div className="footer"></div>    
       </div>

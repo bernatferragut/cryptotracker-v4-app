@@ -12,8 +12,8 @@ class Tickers extends Component {
                 name: 'Bitcoin',
                 symbol: 'BTC',
                 price_usd: '1',
-                percent_change_1hr: '0',
-                percent_change_24hr: '0',
+                percent_change_1h: '0',
+                percent_change_24h: '0',
                 percent_change_7d: '0',
             },
             {
@@ -21,8 +21,8 @@ class Tickers extends Component {
                 name: 'Ethereum',
                 symbol: 'ETH',
                 price_usd: '1',
-                percent_change_1hr: '0',
-                percent_change_24hr: '0',
+                percent_change_1h: '0',
+                percent_change_24h: '0',
                 percent_change_7d: '0',
             },
             {
@@ -30,8 +30,8 @@ class Tickers extends Component {
                 name: 'Litecoin',
                 symbol: 'LTC',
                 price_usd: '1',
-                percent_change_1hr: '0',
-                percent_change_24hr: '0',
+                percent_change_1h: '0',
+                percent_change_24h: '0',
                 percent_change_7d: '0',
             }
         ]
@@ -49,10 +49,10 @@ class Tickers extends Component {
         .then(res => res.json())
         .then( res => { 
             let wanted = ['bitcoin', 'ethereum', 'litecoin']
-            let result = res.data.filter(name =>  wanted.includes(crypto.id))
+            let result = res.data.filter(crypto =>  wanted.includes(crypto.id))
             this.setState({ data : result })
-            .catch(err => console.log(err))
         })
+        .catch(err => console.log(err))
     }
 
     render(){

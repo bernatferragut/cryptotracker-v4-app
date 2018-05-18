@@ -14,8 +14,8 @@ class Crypto extends Component {
         } = this.props.data
         return (
             <li className={"crypto "+id}>
-                <p className="crypto-name">{name} {symbol}</p>
-                <h1>{price_usd.toFixed(2)}</h1>
+                <p className="crypto-name">{name} ({symbol})</p>
+                <h1>${(+price_usd).toFixed(2)}</h1>
                 <p>{percent_change_1h}% 1hr</p>
                 <p>{percent_change_24h}% 24hr</p>
                 <p>{percent_change_7d}% 7d</p>

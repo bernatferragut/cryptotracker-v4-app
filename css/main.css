@@ -18,11 +18,38 @@ html, body {
     grid-template-rows: 1fr 1fr 1fr;
     height: 100vh;
 }
+
+ul {
+    list-style: none;
+}
     
 .header {
     padding: 100px;  
     background-color: var(--main-bg-color1);
     font-size: 12px;
+}
+
+.crypto-ticker {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 285px;
+    max-height: 70px;
+    padding: 10px;
+    border: 1px solid greenyellow;
+    border-radius: 4px;
+}
+
+.c {
+    color: yellow;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: orangered;
 }
 
 .body {

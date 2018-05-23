@@ -13,10 +13,12 @@
     <div class="app">
         <div id="header" class="header">
             <ul>
-                <li v-for="(crypto) in cryptos">({{crypto.symbol}})-{{crypto.name}} = {{crypto.quotes.USD.price}} USD</li>
+                <li v-if="loaded" v-for="crypto in cryptos">
+                    <crypto :crypto="crypto"></crypto>
+                </li>
                 <span v-if="cryptos.length===0"> NO CRYPTOS FETCHED</span>
             </ul>
-            <h4> TOTAL USD: {{ totalUSD }}</h4>
+            <h4 v-if="loaded"> TOTAL USD: {{ totalUSD }}</h4>
         </div>
         <div class="body"></div>
         <div class="footer"></div>

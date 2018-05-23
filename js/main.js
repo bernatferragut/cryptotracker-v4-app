@@ -6,18 +6,7 @@
 //VUE COMPONENTS
 Vue.component('crypto', {
     props: {
-        crypto: {
-            name: String,
-            symbol: String,
-            quotes: {
-                USD: { 
-                    price: Number,
-                    percent_change_1h: Number,
-                    percent_change_24h: Number,
-                    percent_change_7d: Number
-                }
-            }
-        }
+        crypto: Object
     },
 
     data : function () {
@@ -27,37 +16,19 @@ Vue.component('crypto', {
     },
 
     methods: {
-        positive1: function() {
-            if (this.crypto.quotes.USD.percent_change_1h > 0 ) {
-                return this.up = true 
-            } else {
-                return this.up = false
-            }
-        },
-        positive2: function() {
-            if(this.crypto.quotes.USD.percent_change_24h > 0) {
-                return this.up = true
-            } else {
-                return this.up = false
-            }
-        },
-        positive3: function() {
-            if(this.crypto.quotes.USD.percent_change_7d > 0) {
-                return this.up = true
-            } else {
-                return this.up = false
-            }
-        }
+        getColor: (num) => {
+            return num > 0 ? "color:green" : "color:red"
+          }
     },
 
     template: `
         <div props="crypto" class="crypto-ticker">
             <div class="c"> ({{crypto.symbol}}) </div>
             <div class="c"> {{crypto.name}}</div>
-            <div class="c"> {{crypto.quotes.USD.price}} USD</div>
-            <div class="d" :class="[positive1() ? 'green' : 'red']"> 1h:{{crypto.quotes.USD.percent_change_1h}}%</div>
-            <div class="e" :class="[positive2() ? 'green' : 'red']"> 24h:{{crypto.quotes.USD.percent_change_24h}}%</div>
-            <div class="f" :class="[positive3() ? 'green' : 'red']"> 7d: {{crypto.quotes.USD.percent_change_7d}}%</div>
+            <div class="c"> {{(crypto.quotes.USD.price).toFixed(2)}} USD</div>
+            <div :style="getColor(crypto.quotes.USD.percent_change_1h)"> 1h:{{crypto.quotes.USD.percent_change_1h}}%</div>
+            <div :style="getColor(crypto.quotes.USD.percent_change_24h)"> 24h:{{crypto.quotes.USD.percent_change_24h}}%</div>
+            <div :style="getColor(crypto.quotes.USD.percent_change_7d)"> 7d: {{crypto.quotes.USD.percent_change_7d}}%</div>
         </div>
     `
 })

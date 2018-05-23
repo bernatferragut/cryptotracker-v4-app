@@ -44,14 +44,6 @@ ul {
     color: yellow;
 }
 
-.green {
-    color: green;
-}
-
-.red {
-    color: orangered;
-}
-
 .body {
     background-color: var(--main-bg-color2);
 }

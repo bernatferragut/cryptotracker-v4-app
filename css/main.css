@@ -1,7 +1,7 @@
 :root {
     --main-bg-color1: #101010;
-    --main-bg-color2: #474646;
-    --main-bg-color3: #646363;
+    --main-bg-color2: #101010;
+    --main-bg-color3: #101010;
     --main-text-color: greenyellow;
   }
 
@@ -22,18 +22,32 @@ html, body {
 ul {
     list-style: none;
 }
+
+#main-title {
+    font-size: 20px;
+}
     
 .header {
-    padding: 100px;  
+    padding: 0px;
     background-color: var(--main-bg-color1);
-    font-size: 12px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tickers {
+    display: grid;
+    grid-gap: 2px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .crypto-ticker {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 2px;
     grid-template-columns: 1fr 1fr 1fr;
-    max-width: 285px;
+    max-width: 250px;
     max-height: 70px;
     padding: 10px;
     border: 1px solid greenyellow;

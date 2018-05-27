@@ -1,13 +1,11 @@
-# FROM REACT TO VUE
-===================
+# CRYPTO-TICKER - TOP 10 Cryptos
+================================
 
-> This project initially build in VanillaJS wanted to be rebuild from scratch with one of the 'new' frameworks.
+> Simple Crypto-Ticket fetching the top 10 crypto-currencies
+> The project uses:
 
-> After dealing with Angular and React finnally  have decided to give me to Vue to advance in my skills
+1. Vanilla.js
+2. Vue.js
+3. CSS GRID
 
-> The Project will be build in Vue and will be a learning process that I want to enjoy 
 
-> It's time to advance in the new world od UI components to build the new web 3.
-
-## VUE.JS
-==========
